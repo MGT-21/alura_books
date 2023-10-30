@@ -1,0 +1,159 @@
+.nav_bar {
+    background-color: var(--title-background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.nav_bar__box {
+    display: flex;
+    align-items: center;
+}
+
+.container_img {
+    padding: 1em;
+}
+
+.nav_bar__checkbox:checked~.nav_bar__label>.menu_button {
+    background-image: url("../imagens/Menu\ Aberto.svg");
+}
+
+.nav_bar__checkbox:checked~.nav_bar__label {
+    background: var(--gradient-blue);
+}
+
+.menu_button {
+    width: 24px;
+    height: 24px;
+    background-image: url("../imagens/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.menu_list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 40vw;
+    z-index: 2;
+}
+
+.nav_bar__checkbox:checked~.menu_list {
+    display: block;
+
+}
+
+.menu_list__title,
+.menu_list__item {
+    padding: 1em;
+    background-color: var(--white);
+
+}
+
+.menu_list__title {
+    color: var(--orange);
+    font-weight: 700
+}
+
+.menu_list__link {
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+
+.nav_bar__checkbox,
+.logo_title,
+.pc_menu,
+.nav_itens__text {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .logo_title,
+    .logo_tile_negrito {
+        font-style: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    .logo_title {
+        font-weight: 400;
+        display: block;
+    }
+
+    .logo_title_negrito {
+        font-weight: 700;
+    }
+
+    .pc_menu {
+        display: flex;
+    }
+
+    .pc_menu__item {
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+
+    .pc_menu__link {
+        text-decoration: none;
+        color: var(--black);
+    }
+
+
+
+    .pc_menu__button:checked~.menu_list {
+        display: block;
+        width: auto;
+    }
+
+    .pc_menu__button:checked~.pc_menu__label>.pc_menu__item {
+        background: var(--gradient-blue);
+        color: var(--white)
+    }
+
+    .pc_menu__item {
+        padding: 2em 1em;
+    }
+
+    .menu_list__item:hover {
+        background: var(--gradient-blue);
+    }
+
+    .menu_list__item:hover>.menu_list__link {
+        -webkit-text-fill-color: var(--white);
+        text-decoration: none;
+    }
+
+    .nav_box__favoritos,
+    .menu_button,
+    .pc_menu__button {
+        display: none;
+    }
+}
+
+
+
+@media screen and (min-width: 1728px) {
+    .nav_bar {
+        padding: 0 2em;
+    }
+
+    .nav_itens__text {
+        display: block;
+    }
+
+    .nav_box__links {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--black);
+    }
+
+    .pc_menu {
+        margin-right: auto;
+    }
+}
